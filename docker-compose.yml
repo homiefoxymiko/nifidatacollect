@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nifidata:
+    build:
+      context: .
+      args:
+        DELAY: "*/2 * * * *"
+    image: nifidatacollect
+    network_mode: "host"
+    environment:
+      - URL=PASTE YOUR NIFI URL HERE
+      - LOGIN=PASTE YOUR LOGIN HERE
+      - PASS=PASTE YOUR PASSWORD HERE
+      - WEBURL=PASTE YOUR WEBHOOK URL HERE
